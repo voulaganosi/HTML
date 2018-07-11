@@ -1,0 +1,47 @@
+<html>
+<head>
+<script languange="javascript" src="http://erodios.it.teithe.gr/intprog/exams/salesDB.js" ></script> 
+<script languange="javascript">
+
+function fillTable(){
+   var myTable = document.getElementById("productTable");
+   for (i=0; i<products.length; i++){
+	  var tempRow = myTable.insertRow(-1);
+	  var tempCell = tempRow.insertCell(0);
+	  tempCell.innerHTML = '<button onclick="addToCartTable('+i+')">add To Cart</button>';
+	  tempCell = tempRow.insertCell(0);
+	  tempCell.innerHTML = '<input type="text" id="q'+i+'"/>';
+	  tempCell = tempRow.insertCell(0);
+	  tempCell.innerHTML = products[i][2];
+	  tempCell = tempRow.insertCell(0);
+	  tempCell.innerHTML = '<img src="'+products[i][1]+'" width="50px"/>';
+	  tempCell = tempRow.insertCell(0);
+	  tempCell.innerHTML = products[i][0];
+   }   
+}
+
+function addToCartTable(rowNum){
+   var myTable = document.getElementById("productTable");
+   var pname = myTable.rows[rowNum].cells[0].innerHTML;
+   var price = myTable.rows[rowNum].cells[2].innerHTML;
+   var quantity = document.getElementById("q"+rowNum).value; 
+   var cartTable = document.getElementById("cart");
+   var tempRow = cartTable.insertRow(-1);
+   var tempCell = tempRow.insertCell(-1);
+   tempCell.innerHTML = pname;
+   tempCell = tempRow.insertCell(-1);
+   tempCell.innerHTML = price;
+   tempCell = tempRow.insertCell(-1);
+   tempCell.innerHTML = parseInt(quantity) * parseInt(price);
+   
+}
+
+</script>
+</head>
+<body onload="fillTable()" >
+<table id="productTable" border="1">
+</table>
+<table id="cart" border="1" style="position:absolute;top:0px; right:0px">
+</table>
+</body>
+</html>

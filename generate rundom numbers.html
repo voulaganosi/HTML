@@ -1,0 +1,75 @@
+<html>
+<head>
+
+<title>Lab9.6</title>
+
+<script type="text/javascript">
+
+function generate()
+{
+	var table = document.getElementById("tab");
+	for(i=0; i<table.rows.length; i++)
+	{
+		for(j=0; j<table.rows[i].cells.length; j++)
+		{
+			table.rows[i].cells[j].innerHTML = Math.floor(Math.random()*11);
+			
+			if(parseInt(table.rows[i].cells[j].innerHTML,10) < 5)
+				table.rows[i].cells[j].style.backgroundColor = "red";
+			else
+				table.rows[i].cells[j].style.backgroundColor = "green";
+		}
+	}
+}
+</script>
+
+</head>
+
+<body>
+
+<table id="tab" border="1" cellpadding="2px" style="width:200px; heigth:200px" >
+<!-- row 1-->
+<tr>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+</tr>
+<!-- row 2-->
+<tr>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+</tr>
+<!-- row 3-->
+<tr>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+</tr>
+<!-- row 4-->
+<tr>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+</tr>
+<!-- row 5-->
+<tr>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+	<td style='width: 20px'>&nbsp;</td>
+</tr>
+</table>
+
+<button id="but1" onclick="generate()">Generate</button>
+</body>
+</html>

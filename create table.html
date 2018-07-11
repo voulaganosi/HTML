@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab10.5</title>
+<script>
+function createTable()
+{
+	var row = document.getElementById("row");
+	var cell = document.getElementById("cell");
+	var mytable = document.getElementById("myTable");
+   
+	for(i=0; i<row.value; i++)
+	{
+		var grammi = mytable.insertRow(-1);
+		//me to -1 bazei grammes sto telos me to 0 stin arxi
+
+		for(j=0; j<cell.value; j++)
+		{
+			var keli = grammi.insertCell(-1);
+			keli.innerHTML = "row"+i+", cell:"+j;
+		}
+
+	}
+}
+
+</script>
+</head>
+
+<body>
+<input name="Text1" type="text" id="row" />
+<input name="Text1" type="text" id="cell" />
+
+<button name="Text1" onclick="createTable()" style="width: 131px; height: 23px"/>Make table</button>
+
+<table id="myTable" border="1"></table>
+</body>
+
+</html>

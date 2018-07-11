@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab8.4</title>
+<style type="text/css">
+.linkClass
+{
+	color:red;
+	background-color:yellow;
+}
+	
+</style>
+
+<script type="text/javascript">
+
+function highlightlinks()
+{
+
+for (i=0; i<document.getElementsByTagName("a").length; i++)
+	{
+	attr=document.createAttribute("class");
+	attr.value="linkClass";
+	document.getElementsByTagName("a")[i].setAttributeNode(attr);
+	}
+
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+<a href="http://www.youtube.com"> YouTube </a> <br/>
+<a href="http://www.twitter.com"> Twitter </a> <br/>
+<a href="http://www.facebook.com"> Facebook </a> <br/>
+<a href="http://www.google.com"> Google</a> <br/>
+<a href="http://www.teithe.gr"> ATEITH </a> <br/>
+<a href="http://www.nytimes.com"> New York Times </a> <br/>
+<a href="http://www.in.gr"> In.gr </a> <br/>
+<a href="http://www.imdb.com"> Internet Movie Database </a> <br/>
+<button id="button1" onclick="highlightlinks()">Try it!</button>
+
+
+</body>
+
+</html>

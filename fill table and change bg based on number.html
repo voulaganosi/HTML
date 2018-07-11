@@ -1,0 +1,74 @@
+<html>
+<head>
+<script>
+function fillTable(){
+   mytable = document.getElementById("myTable");
+   for (i=0; i<5;i++){
+       tempR = mytable.insertRow(0);
+	   for (j=0; j<5; j++){
+	      tempC = tempR.insertCell(0);
+		  tempC.innerHTML = 10 + Math.floor(Math.random()*90);
+	   }
+   }
+}
+var c1,c2,c3;
+var clickNo=1;
+function getColor(e){
+   if (e.target.tagName== "TD"){
+      if (clickNo==1)
+	     c1 = e.target.innerHTML;
+	  if (clickNo==2)
+	     c2 = e.target.innerHTML;
+	  if (clickNo==3)
+	     c3 = e.target.innerHTML;
+	  clickNo++;
+	  if (clickNo == 4){
+	     createDiv(); 
+		 clickNo = 1;
+	  }
+   
+   }
+
+}
+
+function createDiv(){
+   var divColor ="#"+c1+c2+c3;
+   var myP = document.getElementById("myP");
+   myP.innerHTML += "<div style=\"background-color :"+divColor
+                    +"\">"+divColor+"</div>";
+   
+}
+
+function changeBG(){
+   window.setInterval("changeColor()",3000);
+}
+var currentIndex=0;
+
+function changeColor(){
+   var myDivs = document.getElementsByTagName("DIV");  
+   document.body.style.backgroundColor = myDivs[currentIndex].style.backgroundColor;
+   currentIndex++;
+   if (currentIndex == myDivs.length)
+      currentIndex = 0;     
+}
+/*
+function fillTable(){
+   mytable = document.getElementById("myTable");
+   for (i=0; i<5;i++){
+       mytable.insertRow(0);
+	   for (j=0; j<5; j++){
+	      mytable.rows[i].insertCell(0); 
+	      mytable.rows[i].cells[j].innerHTML = 10 + Math.floor(Math.random()*90);
+	   }
+   }
+}
+*/
+</script>
+</head>
+<body onclick="getColor(event)">
+<button onclick="fillTable()">Fill </button>
+<table  border="1" id="myTable"></table>
+<p id="myP"></p>
+<button onclick="changeBG()"> changeBG </button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<html>
+
+<head>
+<meta>
+<title>Lab10.3</title>
+<script type="text/javascript">
+function addoption(){
+var coll=document.getElementById("mysel");
+var par=document.getElementsByTagName("P");
+for (i=0;i<par.length;i++){
+	var oOption=document.createElement("OPTION");
+	oOption.text=par[i].innerHTML;
+	oOption.value=i;
+	coll.options.add(oOption);}
+}
+
+function moving(){
+	var coll = document.getElementById("mysel");
+	var par=document.getElementsByTagName("P");
+	par[coll.selectedIndex].scrollIntoView(true);
+	par[coll.selectedIndex].style.fontWeight="bold";
+}
+</script>
+</head>
+
+<body onload="addoption()"> 
+<select name="mysel" id="mysel" onchange="moving()"></select>
+<p>1h paragrafos</p>
+<br><br><br>
+<p>2h paragrafos</p>
+<br><br><br>
+<p>3h paragrafos</p>
+<br><br><br>
+<p>4h paragrafos</p>
+<br><br><br>
+<p>5h paragrafos</p>
+<br><br><br>
+<p>6h paragrafos</p>
+<br><br><br>
+<p>7h paragrafos</p>
+<br><br><br>
+<p>8h paragrafos</p>
+<br><br><br>
+<p>9h paragrafos</p>
+<br><br><br>
+<p>10h paragrafos</p>
+<br><br><br>
+<p>11h paragrafos</p>
+<br><br><br>
+<p>12h paragrafos</p>
+<br><br><br>
+<p>13h paragrafos</p>
+<br><br><br>
+<p>14h paragrafos</p>
+<br><br><br>
+<p>15h paragrafos</p>
+<br><br><br>
+<p>16h paragrafos</p>
+<br><br><br>
+<p>17h paragrafos</p>
+<br><br><br>
+<p>18h paragrafos</p>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab8.1</title>
+<script type="text/javascript">
+function showtag(e){
+	document.getElementById("text01").value=e.target.tagName;
+	document.getElementById("text02").value=e.target.innerHTML;
+
+}
+
+</script>
+</head>
+
+<body onmouseover="showtag(event)">
+<input type="text01" id="text01"/> <br/>
+<textarea id="text02" cols="100" rows="5"> </textarea> </br>
+<a href="http://hydra.it.teithe.gr"> link </a> </br>
+<p> paragraph </p> </br>
+<div> div </div> </br>
+<label> label </label> </br>
+
+</body>
+
+</html>

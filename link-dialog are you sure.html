@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab10.4</title>
+<script>
+function checkclick(){
+var answer=window.confirm("Are you sure?");
+if (!answer)return false;
+}
+
+function changelinks(){
+for(i=0; i<document.links.length; i++){
+document.links[i].onclick=checkclick;
+}
+}
+
+</script>
+</head>
+
+<body onload="changelinks()">
+
+<p><a href="http://www.google.com">link</a></p>
+<p><a href="../Documents/My%20Web%20Sites/default.html">link</a></p>
+
+</body>
+
+</html>

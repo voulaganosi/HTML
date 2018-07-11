@@ -1,0 +1,80 @@
+<html>
+<head>
+
+<title>Lab9.7</title>
+
+<script type="text/javascript">
+
+var flag = false;
+
+function paint()
+{
+	var combobox = document.getElementById("combo");
+	var selectedOption = combobox.options[combobox.selectedIndex].innerHTML;
+	
+	if(flag==false)
+	{
+		document.getElementById("but1").innerHTML = "Decolor"
+		flag = true;
+		
+		if(selectedOption == "1st level headers")
+		{
+			var headersToChangeColor = document.getElementsByTagName("h1");
+			for(var i=0; i<headersToChangeColor.length; i++)
+			{
+				headersToChangeColor[i].style.backgroundColor = "yellow";
+			}
+		}	
+		else if(selectedOption == "2nd level headers")
+		{
+			var headersToChangeColor = document.getElementsByTagName("h2");
+			for(var i=0; i<headersToChangeColor.length; i++)
+			{
+				headersToChangeColor[i].style.backgroundColor = "yellow";
+			}
+		}
+	}	
+	else
+	{
+		document.getElementById("but1").innerHTML = "Color"
+		flag = false;
+		
+		if(selectedOption == "1st level headers")
+		{
+			var headersToChangeColor = document.getElementsByTagName("h1");
+			for(var i=0; i<headersToChangeColor.length; i++)
+			{
+				headersToChangeColor[i].style.backgroundColor = "white";
+			}
+		}	
+		else if(selectedOption == "2nd level headers")
+		{
+			var headersToChangeColor = document.getElementsByTagName("h2");
+			for(var i=0; i<headersToChangeColor.length; i++)
+			{
+				headersToChangeColor[i].style.backgroundColor = "white";
+			}
+		}
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1 style="color:red">This is 1st h1</h1>
+<h2 style="color:red">This is 1st h2</h2>
+<h1 style="color:red">That is 2nd h1</h1>
+<h2 style="color:red">That is 2nd h2</h2>
+
+<select id="combo"> 
+	<option value="1st level">1st level headers</option>
+	<option value="2nd level" selected="true">2nd level headers</option>
+</select>
+
+<button id="but1" onclick="paint()">Color</button>
+
+</body>
+</html>

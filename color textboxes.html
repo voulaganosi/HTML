@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab7.5</title>
+<script type="text/javascript">
+
+function myfunction(obj)
+{
+	obj.style.backgroundColor="yellow";
+}
+ 
+function myfunction2(obj)
+{
+	if (obj.value=="")
+		obj.style.backgroundColor="white";
+	else
+		obj.style.backgroundColor="red";
+}
+ 
+</script>
+
+</head>
+
+<body>
+<form>
+Text Box 1: <input type="text" id="textfield1" onfocus="myfunction(this)" onblur="myfunction2(this)"/> </br>
+Text Box 2: <input type="text" id="textfield2" onfocus="myfunction(this)" onblur="myfunction2(this)"/> <br>
+Text Box 3: <input type="text" id="textfield3" onfocus="myfunction(this)" onblur="myfunction2(this)"/> </br>
+Text Box 4: <input type="text" id="textfield4" onfocus="myfunction(this)" onblur="myfunction2(this)"/> </br>
+
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<title>Lab9.5</title>
+
+<script type="text/javascript">
+
+function addToCombo()
+{
+	var text = document.getElementById("txtbox").value;
+	var combobox = document.getElementById("combo");
+	var option = document.createElement("option");
+	
+	option.text = text;
+	
+	if(text != "")
+		combobox.add(option);
+}
+</script>
+
+</head>
+
+<body>
+
+<select id="combo"> 
+	<option value="default">default</option>
+</select>
+
+<input type="text" id="txtbox">
+<button id="but1" onclick="addToCombo()">Add</button>
+
+</body>
+</html>

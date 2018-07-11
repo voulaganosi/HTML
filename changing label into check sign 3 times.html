@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab8.3</title>
+<script type="text/javascript">
+function markthis(event){
+var x=window.event	
+if (x)
+	{
+	//IE
+	if(x.srcElement.tagName=="LI")
+		x.srcElement.innerHTML='<img src="checksign.jpg"/> ';
+		y++
+	}
+	
+	else
+	{
+	//firefox,chrome,opera
+   		if(event.target.tagName=="LI")
+   		event.target.innerHTML='<img src="checksign.jpg"/> ';
+   		y++
+
+	}
+
+	if(y==3)
+	{
+		document.getElementById("mylist").onclick=null;
+		alert("You cant click anymore!");
+	}
+}
+
+</script>
+</head>
+
+<body>
+<ul id="mylist">
+	<li>Click on me to see what happens :)</li>
+	<li>Click on me to see what happens :)</li>
+	<li>Click on me to see what happens :)</li>
+	<li>Click on me to see what happens :)</li>
+	<li>Click on me to see what happens :)</li>
+	<li>Click on me to see what happens :)</li>
+
+</ul>
+
+<script type="text/javascript">
+	document.getElementById("mylist").onclick=markthis;
+	var y=0;
+</script>
+</body>
+
+</html>

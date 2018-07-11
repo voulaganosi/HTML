@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab9.1</title>
+<script type="text/javascript">
+
+var table = new Array();
+table[0] = ("image1.jpg");
+table[1] = ("image2.jpg");
+table[2] = ("image3.jpg");
+table[3] = ("image4.jpg");
+
+var i = 0;
+function nextImage()
+{
+	eikona = document.getElementById("eikona");
+	if(i==3)
+		i = 0;	
+	else
+		i++
+	eikona.src=table[i];
+}	
+
+function previousImage()
+{
+	eikona = document.getElementById("eikona");
+	if(i==0)
+		i = 3;	
+	else
+		i--
+	eikona.src=table[i];
+}
+
+</script>
+
+
+</head>
+
+<body>
+<img src="image1.jpg" id="eikona" name="eikona" />
+<input type="button" id="previous" value="previous" onclick="previousImage()" style="width: 80px"></input>
+<input type="button" id="next" value="next" onclick="nextImage()" style="width: 80px"></input>
+
+
+
+</body>
+
+</html>

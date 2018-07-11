@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lab8.5</title>
+<script>
+
+function createme()
+{
+	var tagl=document.getElementById("taglist1");
+	var colorl=document.getElementById("colorlist1");
+	var output=document.getElementById("output");
+	var txt=document.getElementById("text");
+  
+	var el=document.createElement(tagl.value);
+	el.innerHTML=txt.value;
+  
+	var att=document.createAttribute("style");
+	att.value="Color: " + colorl.value;
+	el.setAttributeNode(att);
+  
+	output.appendChild(el);
+}
+
+</script>
+</head>
+<input name="Text1" type="text" id="text"/>
+<body>
+<select name="Select1" id="taglist1">
+<option value="H1">H1</option>
+<option value="H2">H2</option>
+<option value="H3">H3</option>
+<option value="P">P</option>
+<option value="SPAN">SPAN</option>
+
+
+</select>
+<select name="Select2" id="colorlist1">
+<option value="red">red</option>
+<option value="blue">blue</option>
+<option value="green">green</option>
+
+
+</select>
+<input name="Button1" type="button" value="Create Element" onclick="createme()" />
+<div id="output"></div>
+
+</body>
+
+</html>
